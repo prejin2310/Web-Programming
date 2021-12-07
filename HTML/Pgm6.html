@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String & Math</title>
+	<style type="text/css">
+		#main{
+			background: cyan;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<table> <form>
+			<tr>
+				<td><label>Enter the string</label></td>
+				<td> <input type="text" id="txt1"></td>
+			</tr>
+			<tr>
+				<td><label>How many time to Repeat Text</label></td>
+				<td> <input type="number" id="num1"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td> <input type="submit" id="btn1" onclick="stringfn()"></td>
+			</tr>
+		</form></table>
+
+	</div>
+	<div id="output">
+    <p class="out"></p>
+	</div>
+
+   <script type="text/javascript">
+   	
+   function stringfn(){
+   	let str = document.getElementById('txt1').value
+   	let rep = document.getElementById('num1').value
+
+    let data
+
+   	data +='lowercase  :  ' + str.Repeat(rep)
+
+   	document.getElementById('output').innerHTML = (data);
+   }
+
+   </script>
+
+</body>
+</html>

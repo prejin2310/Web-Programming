@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and Math functions</title>
+  
+</head>
+
+<body>
+    <div>
+        <h2>String Functions</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Enter a text</th>
+                    <td> <input type="text" id="input_srting" name="input_s"></td>
+                </tr>
+                <tr>
+                    <th>How many time to repeat the text</th>
+                    <td> <input type="number" id="num" name="input_search"></td>
+                </tr>
+            
+            </tbody>
+        </table>
+
+
+        <input type="button" value="Generate" class="selector" onclick="string_func()">
+
+        <br><br>
+        <ul id="output"> </ul>
+    </div>
+
+    <div>
+        <h2>Math Functions</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Enter a Number</th>
+                    <td> <input type="text" id="input_num"></td>
+                </tr>
+                <tr>
+                    <th>Power term</th>
+                    <td> <input type="text" id="input_pow"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <input type="button" value="Generate" class="selector" onclick="math_func()">
+
+        <br><br>
+        <ul id="output_math"> </ul>
+    </div>
+
+
+    <script>
+        function string_func() {
+            let input = document.getElementById('input_srting').value;
+            let num = document.getElementById('input_search').value;
+            
+
+
+            let li_O = '<li>';
+            let li_C = '</li>';
+            let list_items;
+            list_items = li_O + 'Length of string is  : ' + input.length + li_C;
+            list_items += li_O + 'First index of ' + search + ' is ' + input.indexOf(search) + li_C;
+            list_items += li_O + 'Last index of ' + search + ' is ' + input.lastIndexOf(search) + li_C;
+            list_items += li_O + 'Index with search starting position 5 of ' + search + ' is ' + input.indexOf(search, 5) + li_C;
+            list_items += li_O + 'Search ' + search + ' is ' + input.search(search) + li_C;
+            list_items += li_O + 'Slice[' + slice_s + ' : ] is ' + input.slice(slice_s) + li_C;
+            list_items += li_O + 'Slice[' + slice_s + ' : ' + slice_e + '] is ' + input.slice(slice_s, slice_e) + li_C;
+            list_items += li_O + 'Substring[' + slice_s + ' : ' + slice_e + ']  is ' + input.substring(slice_s, slice_e) + li_C;
+            list_items += li_O + 'Substr[' + slice_s + ' :] is ' + input.substr(slice_s) + li_C;
+            list_items += li_O + 'Substr[' + slice_s + ' :] with length ' + slice_e + ' is ' + input.substr(slice_s, slice_e) + li_C;
+            list_items += li_O + 'replace ' + replace_f + ' with ' + replace_s + ' is ' + input.replace(replace_f, replace_s) + li_C;
+            list_items += li_O + 'Uppercase  :  ' + input.toUpperCase() + li_C;
+            list_items += li_O + 'lowercase  :  ' + input.toLowerCase() + li_C;
+
+            document.getElementById('output').innerHTML = (list_items);
+        }
+
+        function math_func() {
+            let input = document.getElementById('input_num').value;
+            let power = document.getElementById('input_pow').value;
+            let li_O = '<li>';
+            let li_C = '</li>';
+            let list_items;
+
+            list_items = li_O + 'Value of PI  : ' + Math.PI + li_C;
+            list_items += li_O + 'Round of  '+input+' is : ' + Math.round(input) + li_C;
+            list_items += li_O + ''+input+' raise to '+power+' is : ' + Math.pow(input,power) + li_C;
+            list_items += li_O + 'Square root of  '+input+' is : ' + Math.sqrt(input) + li_C;
+            list_items += li_O + 'Absolute value  of  '+input+' is : ' + Math.abs(input) + li_C;
+            list_items += li_O + 'Ceil value  of  '+input+' is : ' + Math.ceil(input) + li_C;
+            list_items += li_O + 'Floor value  of  '+input+' is : ' + Math.floor(input) + li_C;
+            list_items += li_O + 'Sin value  of  '+input+' is : ' + Math.sin(input* Math.PI / 180) + li_C;
+            list_items += li_O + 'Cos value  of  '+input+' is : ' + Math.cos(input* Math.PI / 180) + li_C;
+            list_items += li_O + 'Minimum of (0, 150, 30, 20, -8, -200)    is : ' + Math.min(0, 150, 30, 20, -8, -200) + li_C;
+            list_items += li_O + 'Maximum of (0, 150, 30, 20, -8, -200)    is : ' + Math.max(0, 150, 30, 20, -8, -200) + li_C;
+            list_items += li_O + 'A Random number is : ' + Math.random() + li_C;
+
+            document.getElementById('output_math').innerHTML = (list_items);
+        }
+    </script>
+</body>
+
+</html>

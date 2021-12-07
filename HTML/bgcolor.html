@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bg Color</title>
+    <style>
+        #btn{
+            margin-top: 402px;
+            margin-left: 840px;
+    width: 180px;
+    height: 60px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="Click Here" onClick="colorchange()">
+
+    <script>
+        let color=document.getElementById('btn'); 
+        function colorchange(){
+        let final=Math.floor(Math.random()*10000000).toString(16)
+        let bgcolor='#'+final
+        console.log(final)
+        document.body.style.background=bgcolor
+        }
+    </script>
+</body>
+</html>

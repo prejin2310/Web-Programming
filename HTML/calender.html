@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<style>
+    th,td{
+           padding: 10px;
+           border: 1px solid black;
+       }
+       .row{
+         border: none;
+       }
+       .content{
+       	background-color: black;
+       	color: white;
+       }
+</style>
+<body>
+    <div class="main">
+       
+                   <input id="year" type="number" placeholder="year">
+                    <input id="month" type="number" placeholder="month">
+                
+                    <td  colspan="2" class="col">
+                    	<input onclick="generate()" type="button" id="subtn" value="Generate Calender"> 
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td  colspan="2" class="col">
+                    	<input type="reset" value="reset" id="resetbtn" onclick="location.reload();"> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="content"> </div>
+</body>
+<script>
+    function generate() {
+        var calender = "<table BORDER=1 id='calender'><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>"
+        var year = document.getElementById("year").value;
+        var month = document.getElementById("month").value;
+        month -=1;
+
+        var date = new Date(year,month);
+        var day = date.getDay();
+        for (var i = 0; i < day; i++) {
+            calender += "<td></td>";
+        }
+        while (date.getMonth() == month) {
+            calender += "<td>" + date.getDate() + "</td>";
+            if (date.getDay() % 7 == 6) {
+                calender += "</tr><tr>";
+            }
+            date.setDate(date.getDate() + 1);
+        }
+        
+        while(date.getDay() % 7 != 6 && date.getDay() % 7 != 0){
+            calender += "<td></td>";
+            date.setDate(date.getDate() + 1);
+        }
+        
+        if(date.getDay() % 7 > 0){
+            calender += "<td></td></tr>";
+        }
+
+        calender += "</table>"
+        document.getElementById("content").innerHTML = calender;
+    }
+</script>
+
+</html>

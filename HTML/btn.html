@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Color</title>
+    <style type="text/css">
+        #btn{
+               width: 250px;
+    height: 100px;
+    margin-top: 200px;
+    margin-left: 820px;
+    color: white;
+    border-radius: 15px;
+    border: none;
+
+    </style>
+</head>
+
+<body>
+  <input type="submit" value="Click Here" onclick="colorchange()" id="btn">
+
+
+  <script type="text/javascript">
+      function colorchange(){
+        let a=Math.random()*1000000;
+        let b=Math.floor(a)
+        
+        let color='#'+b
+        //document.body.style.background=color
+        document.getElementById('btn').style.background=color
+        console.log(color)
+      }
+
+
+
+  </script>
+</body>
+</html>
