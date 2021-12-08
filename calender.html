@@ -10,23 +10,28 @@
            padding: 10px;
            border: 1px solid black;
        }
-       .selrow{
+       .row{
          border: none;
+       }
+       .content{
+       	background-color: black;
+       	color: white;
        }
 </style>
 <body>
-    <div class="selection">
-        <table class="tabselection" cellspacing="10">
-            <tbody>
-                <tr class="selrow">
-                    <td class="selcol"><input id="year" type="number" placeholder="year"> </td>
-                    <td class="selcol"><input id="month" type="number" placeholder="month"> </td>
+    <div class="main">
+       
+                   <input id="year" type="number" placeholder="year">
+                    <input id="month" type="number" placeholder="month">
+                
+                    <td  colspan="2" class="col">
+                    	<input onclick="generate()" type="button" id="subtn" value="Generate Calender"> 
+                    </td>
                 </tr>
-                <tr class="selrow">
-                    <td  colspan="2" class="selcol"><input onclick="generate()" type="button" id="subtn" value="Generate Calender"> </td>
-                </tr>
-                <tr class="selrow">
-                    <td  colspan="2" class="selcol"><input type="reset" value="reset" id="resetbtn" onclick="location.reload();"> </td>
+                <tr class="row">
+                    <td  colspan="2" class="col">
+                    	<input type="reset" value="reset" id="resetbtn" onclick="location.reload();"> 
+                    </td>
                 </tr>
             </tbody>
         </table>
