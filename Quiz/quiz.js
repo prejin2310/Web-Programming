@@ -1,3 +1,4 @@
+
 function result(){
 	let score=0
 
