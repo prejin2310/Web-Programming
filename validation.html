@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+      
+  <form name="rform"> 
+    <table align="center">
+    <tr>   
+        <td><label for="txt1">Enter the Name: </label></td>
+        <td><input type="text" id="txt1"></td>  
+    </tr> 
+    <tr>
+        <td><label for="mail">Enter your Email: </label></td>
+        <td><input type="mail" id="mail"></td>
+    </tr>
+    <tr>
+        <td><label for="dob">Enter your DOB: </label></td>
+        <td><input type="date" id="dob" required pattern="\d{4}-\d{2}-\d{2}"></td>
+    </tr>
+    <tr>
+        <td><label for="uname">Enter your Username: </label></td>
+        <td><input type="text" id="uname"></td>
+    </tr>
+    <tr>
+        <td><label for="pass">Enter your Password: </label></td>
+        <td><input type="pass" id="pass"></td>
+    </tr>
+    <tr>
+        <td><input type="submit" id="btn-sub" onclick="valid1()"></td>
+        <td><input type="reset" id="btn-res"></td>
+    </tr>
+    </table>
+  </form>
+  
+  <script type="text/javascript">
+    function valid1()
+    {
+
+        let name =  document.getElementById("txt1").value
+        let email =  document.getElementById("mail").value
+        let dob =  document.getElementById("dob").value
+        let uname =  document.getElementById("uname").value
+        let passcode =  document.getElementById("pass").value
+        let date=/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/
+        let valid = true;
+
+        if(name.length<=0)
+            alert("Please Enter Your Name.");
+
+        else if(email.length<=0)
+            alert("Please Enter Your email.");
+        else if(email.length>0)
+          {
+            let pat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if(pat.test(email) == false)
+            {
+                alert("Please enter a vaild email address");
+            }
+          } 
+        else if(uname.length<=0)
+            alert("Username Required");
+
+        else if(passcode.length<8)
+            alert("Password must conatin 8 Characters");
+            
+
+
+
+
+        
+    }
+</script>
+
+</body>
+</html>
