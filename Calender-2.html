@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calender</title>
+</head>
+<body>
+    <p><input type="text" id="year" placeholder="Enter the Year"></p>
+    <p><input type="submit" value="Generate Calender" onClick='calender()'></p>
+
+  <script type="text/javascript">
+    function calender()
+    {
+        var year = document.getElementById("year").value;
+        var mont= new Array();
+        mont[0]= 'January';
+        mont[1]= 'February';
+        mont[2]= 'March';
+        mont[3]= 'April';
+        mont[4]= 'May';
+        mont[5]= 'June';
+        mont[6]= 'July';
+        mont[7]= 'August';
+        mont[8]= 'September';
+        mont[9]= 'October';
+        mont[10]= 'November';
+        mont[11]= 'December';
+        document.write ("<h1> Calender-"+year+"</h1>");
+        document.write ("<table border='1'><tr>");
+        for(month=0;month<12;month++)
+        {
+            dt=new Date(year,month,01);
+            var fday=dt.getDay();
+            dt.setMonth(month+1,0);
+            var lday=dt.getDate();
+            var dte=1;
+            if(month==4|| month==8)
+            {
+                document.write ("</tr><tr>");
+            }
+        document.write("<td>");
+        document.write ("<center><b>"+mont[dt.getMonth()]+"</b></center>")
+        document.write("<table><tr><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>");
+        for(i=0;i<=41;i++)
+        {
+            if((i%7)==0)
+            {
+                document.write ("</tr><tr>")
+            }
+            if((i>=fday)&&(dte<=lday))
+            {
+                document.write("<td>"+dte+"</td>");
+                dte=dte+1;
+            }else
+            {
+                document.write("<td> </td>");
+            }
+        }
+        document.write("</tr></table>");
+        document.write ("</td>");
+        }document.write("</tr></table>");
+    }
+</script>
+  
+</body>
+</html>
