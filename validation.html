@@ -1,80 +1,87 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validation</title>
+    <title>Form Validation</title>
 </head>
 <body>
-      
-  <form name="rform"> 
-    <table align="center">
-    <tr>   
-        <td><label for="txt1">Enter the Name: </label></td>
-        <td><input type="text" id="txt1"></td>  
-    </tr> 
-    <tr>
-        <td><label for="mail">Enter your Email: </label></td>
-        <td><input type="mail" id="mail"></td>
-    </tr>
-    <tr>
-        <td><label for="dob">Enter your DOB: </label></td>
-        <td><input type="date" id="dob" required pattern="\d{4}-\d{2}-\d{2}"></td>
-    </tr>
-    <tr>
-        <td><label for="uname">Enter your Username: </label></td>
-        <td><input type="text" id="uname"></td>
-    </tr>
-    <tr>
-        <td><label for="pass">Enter your Password: </label></td>
-        <td><input type="pass" id="pass"></td>
-    </tr>
-    <tr>
-        <td><input type="submit" id="btn-sub" onclick="valid1()"></td>
-        <td><input type="reset" id="btn-res"></td>
-    </tr>
-    </table>
-  </form>
-  
-  <script type="text/javascript">
-    function valid1()
-    {
+    <h2 align="center">FORM VALIDATION</h2>
+    <form name="form" action="" method="POST" onsubmit="return validateForm()">
+        <table align="center">
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="fname"> </td>
+            </tr>
+            <tr>
+                <th>Email </th>
+                <td><input type="email" name="email"> </td>
+            </tr>
+            <tr>
+                <th>Mob NO </th>
+                <td><input type="tel" name="mob"> </td>
+            </tr>
+            <tr>
+                <th>Username </th>
+                <td><input type="text" name="user"> </td>
+            </tr>
+            <tr>
+                <th>Password </th>
+                <td><input type="password" name="passcode"> </td>
+            </tr>
+            <tr class="center">
+                <th colspan="2"><input type="submit" value="submit"></th>
+            </tr>
+        </table>
+    </form>
 
-        let name =  document.getElementById("txt1").value
-        let email =  document.getElementById("mail").value
-        let dob =  document.getElementById("dob").value
-        let uname =  document.getElementById("uname").value
-        let passcode =  document.getElementById("pass").value
-        let date=/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/
-        let valid = true;
+    <script>
+        function validateForm() {
+            var fname = document.form.fname.value;
+            var mob = document.form.mob.value;
+            var user = document.form.user.value;
+            var passcode = document.form.passcode.value;
+            var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            var ren = /[0-9!@#$%^&*]/
 
-        if(name.length<=0)
-            alert("Please Enter Your Name.");
-
-        else if(email.length<=0)
-            alert("Please Enter Your email.");
-        else if(email.length>0)
-          {
-            let pat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-            if(pat.test(email) == false)
-            {
-                alert("Please enter a vaild email address");
+            if (fname == "") {
+                alert("Enter First Name !!");
+                document.form.fname.focus();
+                return false;
             }
-          } 
-        else if(uname.length<=0)
-            alert("Username Required");
+            else if(ren.test(fname)){
+                alert("Enter Valid Name !!");
+                document.form.fname.focus();
+                return false;
+            }
 
-        else if(passcode.length<8)
-            alert("Password must conatin 8 Characters");
-            
+            if (mob == "") {
+                alert("Enter Mobile number");
+                return false;
+            }
+            else if (isNaN(mob)) {
+                alert("Enter valid Mobile number");
+                return false;
+            }
+            else if (mob.length != 10) {
+                alert("Enter Mobile number with 10 digit");
+                return false;
+            }
 
+            if (user == "") {
+                alert("Enter User Name !!");
+                document.form.user.focus();
+                return false;
+            }
 
+            if (passcode == "" || passcode.length < 8 || !re.test(passcode)) {
+                alert("Enter minimum 8 digit Password !!" + '\n' + "Atleast one Lowercase & uppercase & digti & special charecter must be included");
+                document.form.passcode.focus();
+                return false;
+            }
 
-
-        
-    }
-</script>
-
+        }
+    </script>
 </body>
+
 </html>
