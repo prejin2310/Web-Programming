@@ -1,44 +1,48 @@
-
-body{
-	background-color: #9003fc;
+*{
+    margin: 0;
+    padding: 0;
 }
 .card{
-	width: 750px;
-    height: 550px;
-    margin-left: 541px;
-    margin-top: 60px;
-    border-radius: 20px;
-    background: white;
-}
-#ques{
-	margin-top: 10px;
-	margin-left: 40px;
-	font-size: 17px;
-	font-family: 'Roboto Mono';
-}
-#option{
-	margin-left: 51px;
-	margin-top: 5px;
-	font-family: arial;
+    width: 60%;
+    height: 450px;
+    background-color: #e4e7ed;
+    margin-left: 20%;
+    margin-top: 3%;
 }
 .btnbox{
-	margin-left:29px;
-}
-#btn{
-	width: 310px;
-    height: 50px;
-    color: blue;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    margin-top: 220px;
-    margin-left:20px;
-    font-size: 18px;
+    width: 60%;
+    margin-left: 28%;
+    margin-top: 1%;
 }
 #quizhead{
-	text-align: center;
-	font-size: 50px;
-	 background: -webkit-linear-gradient(#03fc73, #099992);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding-top: 3%;;
+    color:#2942c2;
+}
+#ques{
+    padding-left: 5%;
+    padding-top: 2%;
+    color: #021c4f;
+}
+#option{
+    padding-left: 8%;
+    padding-top: 1%;
+    color:#2c416b;
+}
+hr{
+    border: 1px dashed #87a9ed;
+    margin-top: 1%;
+}
+#btn{
+    width: 30%;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    margin-left: 2%;
+    background:#dae8f7;
+    border: none;
+    color:#2942c2;
+}
+#btn:hover{
+    background:#add0f7;
+    color: #041d38;
 }
