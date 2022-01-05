@@ -12,7 +12,5 @@ function result(){
 	 	score+=1
 	 }
 
-
-
-alert("You Scored: "+score)
+alert("You've completed the Quiz!" + '\n' + "Your score: "+score+" of 3")
 }
