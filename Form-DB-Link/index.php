@@ -1,4 +1,6 @@
 <?php
+//code for pass value to database::::::
+
 include_once('link.php');
 if(isset($_POST['Submit']))
 {
@@ -9,9 +11,7 @@ if(isset($_POST['Submit']))
       //$name=$_POST('name');
 
       $query="insert into mailname (name,mail) values('$name' , '$mail');";
-      $retrive="select from * from mailname;";
       $run= mysqli_query($link, $query) or die(mysqli_error());
-      $run1=mysqli_query()
       if($run)
           echo "form submitted sucessfully";
       else
@@ -32,11 +32,8 @@ else
 </head>
 <body>
     <form action="index.php" method="post">
-     <span>First Name : </span><br>
-     <input type="text" name="name"><br>
-     <span>Mail Id : </span><br>
+     <input type="text" placeholder="Enter Name" name="name"><br>
      <input type="text" placeholder="Mail Id" name="mail"><br>
-     <br>
      <input type="submit" name="Submit">
 
 
