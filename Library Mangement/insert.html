@@ -1,0 +1,56 @@
+<html>
+    <title>Add details</title>
+    <style>
+        table{
+            border-style: dashed;
+            background-color: lightgreen;
+            border-color: darkgreen;
+            color: darkslategray;
+            width: 30%;
+        }
+        .field {
+           width: 100%;
+        }
+    </style>
+<body>
+    <br><br>
+    
+    <form method="post"action="insert.php">
+        <table align="center">
+            <tr>
+                <td colspan="2"><h1 align="center">Add book details</h1></td>
+            </tr>
+            <tr>
+                <td><label for="name">Bookid :</label></td>
+                <td><input type="text" name="id" class="field"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Title :</label></td>
+                <td><input type="text"name="title" class="field"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Author :</label></td>
+                <td><input type="text"name="author" class="field"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Publisher :</label></td>
+                <td><input type="text"name="pub" class="field"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Price :</label></td>
+                <td><input type="text"name="price" class="field"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Quantity:</label></td>
+                <td><input type="text"name="qty" class="field"></td>
+            </tr>
+           
+
+            <tr align="center">
+                <td colspan="2" ><input type="submit" value="submit"name="submit" style="width:100%"></td>
+    
+            </tr>
+        </table>
+    </form>
+</body>    
+</html>
