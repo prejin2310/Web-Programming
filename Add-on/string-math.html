@@ -1,0 +1,46 @@
+<html>
+    <body>
+        Enter the String 1: <input type="text" id="str"><br>
+        Enter the String 2: <input type="text" id="str1"><br><br>
+        <input type="submit" value="Generate String" id="btn" onclick="string1()"><br>
+        <br>
+        <ol id="strout">
+
+        </ol>
+        Enter the Number: <input type="number" id="num"> <br>
+        Enter the number to powered : <input type="number" id="pow">
+        <input type="submit" value="Generate Math" id="btn" onclick="math1()"><br> <br>
+
+       
+
+    <script >
+        function string1(){
+         let str=document.getElementById('str').value;
+         let str1=document.getElementById('str1').value;
+
+         document.write("<h3>String Function</h3>")
+         document.write("Slice from 1:5 = ",str.slice(0,5),"<br>")
+         document.write("To Lowercase : ",str.toLowerCase(),"<br>")
+         document.write("To Uppercase : ",str.toUpperCase(),"<br>")
+         document.write("Length : ",str.length,"<br>")
+         document.write("Char at position 3 :",str.charAt(3),"<br>")
+         document.write("Concate two string :",str.concat(" ",str1),"<br>")
+        }
+
+        function math1(){
+         let num=document.getElementById('num').value;
+         let pow=document.getElementById('pow').value;
+          
+         document.write("A Random Number: ",Math.random(),"<br>")
+         document.write("Square Root: ",Math.sqrt(num),"<br>")
+         document.write("Floor Division: ",Math.floor(num),"<br>")
+         document.write("Round the Number: ",Math.round(num),"<br>")
+         document.write("Power : ",Math.pow(num,pow),"<br>")
+         document.write("Value of Pi: ",Math.PI,"<br>")
+         
+
+        }
+
+    </script>
+    </body>
+</html>
