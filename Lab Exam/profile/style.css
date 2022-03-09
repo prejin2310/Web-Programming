@@ -1,0 +1,15 @@
+body{
+	background-color: antiquewhite;
+}
+label{
+	font-size: 20px;
+	font-family: sans-serif;
+	cursor: pointer;
+	padding: 30px;
+}
+.menu{
+	margin-top: 100px;
+}
+a{
+	color: red;
+}

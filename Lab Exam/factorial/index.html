@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factorial</title>
+</head>
+<body>
+   <marquee>Welcome to the world of JavaScript</marquee>
+
+   <form method="POST" name="fname" onsubmit="generate()">
+   	<label>Enter the Name: </label>
+   	<input type="number" name="num" id="num"> <br><br>
+   	<input type="submit" name="Submit" value="Generate" id="btn">
+   </form>
+
+   <h3 id="output"></h3>
+   
+   <script type="text/javascript">
+   	function generate()
+   	{
+   		let num=document.fname.num.value;
+   		// console.log(num);
+   		fact=1
+   		for(i=1;i<=num;i++)
+   		{
+   			fact=fact*i
+   			
+   		}
+
+        document.getElementById('output').innerHTML="Factorial of "+num+" = "+fact
+
+   		event.preventDefault();
+   		
+   	}
+   </script>
+
+</body>
+</html>

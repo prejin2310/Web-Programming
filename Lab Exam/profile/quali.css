@@ -1,0 +1,14 @@
+body{
+	font-size: 20px;
+}
+table{
+	width: 600px;
+	height: 200px;
+	border: 1px solid black;
+}
+td,th,tr{
+	border-bottom: 1px solid black;
+}
+#text{
+	color: green;
+}

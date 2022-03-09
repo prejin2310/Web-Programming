@@ -1,0 +1,15 @@
+*{
+	font-family: arial;
+}
+li{
+	color: cornflowerblue;
+}
+hr{
+	height: 5px;
+    background-color: blue;
+    border-radius: 20px;
+    border: none
+}
+#title{
+	font-size: 30px;
+}

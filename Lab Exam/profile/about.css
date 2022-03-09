@@ -1,0 +1,45 @@
+body{
+   background-color: lightskyblue;
+   margin:0;
+   padding: 0;
+}
+.about{
+	margin-left: 20px;
+}
+#title{
+	font-family: system-ui;
+	font-size: 20px;
+	color: white;
+	margin-left: 10px;
+}
+#title1{
+	font-family: system-ui;
+	font-size: 30px;
+	color: darkblue;
+	
+}
+
+p{
+  font-size: 25px;
+  font-family: cursive;
+}
+.para,.res{
+	    margin-top: -10px;
+}
+#highlight{
+	color:firebrick;
+}
+#para2{
+	font-family: monospace;
+}
+.abt{
+	background-color: darkblue;
+        width: 190px;
+    height: 32px;
+    border-radius: 10px;
+}
+#profile{
+	width: 150px;
+	margin-top: 20px;
+   border-radius: 20px;
+}
